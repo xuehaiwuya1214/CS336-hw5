@@ -1,4 +1,4 @@
-# CS336 Assignment 5 Alignment 实现记录
+# CS336 Assignment 5 实现记录
 
 这份 README 是给后来者，也是留给笔者期末周后看的（众所周知期末周后人的记忆会重置bushi）。
 
