@@ -1,0 +1,18 @@
+{
+  "num_metrics": 105,
+  "num_rollout_examples": 16,
+  "optimizer_steps": 100,
+  "derived": {
+    "micro_train_batch_size": 2,
+    "n_prompts_per_rollout_batch": 32,
+    "n_microbatches_per_rollout_batch": 128
+  },
+  "final_metrics": {
+    "grpo_step": 50.0,
+    "optimizer_step": 100.0,
+    "eval/num_examples": 512.0,
+    "eval/reward": 0.775390625,
+    "eval/format_reward": 0.9921875,
+    "eval/answer_reward": 0.775390625
+  }
+}

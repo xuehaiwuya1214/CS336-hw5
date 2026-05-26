@@ -1,0 +1,113 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1180" height="560" viewBox="0 0 1180 560">
+  <style>
+    .title { font: 700 22px Arial, sans-serif; fill: #111827; }
+    .subtitle { font: 13px Arial, sans-serif; fill: #4b5563; }
+    .panel-title { font: 700 18px Arial, sans-serif; fill: #111827; }
+    .axis-label { font: 14px Arial, sans-serif; fill: #374151; }
+    .tick { font: 12px Arial, sans-serif; fill: #4b5563; }
+    .legend { font: 12px Arial, sans-serif; fill: #374151; }
+    .axis { stroke: #111827; stroke-width: 1.1; }
+    .grid { stroke: #e5e7eb; stroke-width: 1; }
+    .baseline { stroke: #8b8b8b; stroke-width: 2.3; stroke-dasharray: 8 6; }
+    .eval-line { fill: none; stroke-width: 3.2; stroke-linecap: round; stroke-linejoin: round; }
+    .rollout { fill: none; stroke-width: 2.1; stroke-linecap: round; stroke-linejoin: round; opacity: 0.88; }
+  </style>
+  <rect x="20" y="24" width="1140" height="508" rx="12" fill="#ffffff" stroke="#e5e7eb"/>
+  <text x="590" y="58" class="title" text-anchor="middle">GRPO: Qwen2.5-Math-1.5B Baseline vs Training Curves</text>
+  <text x="590" y="80" class="subtitle" text-anchor="middle">Baseline: Qwen2.5-Math-1.5B local first 1000; GRPO eval: 512 examples per point</text>
+  <text x="304.0" y="106.0" class="panel-title" text-anchor="middle">Reward / Answer Accuracy</text>
+<text x="62.0" y="283.0" class="axis-label" text-anchor="middle" transform="rotate(-90 62.0 283.0)">Accuracy</text>
+<line x1="106.0" y1="430.0" x2="536.0" y2="430.0" class="axis"/>
+<line x1="106.0" y1="136.0" x2="106.0" y2="430.0" class="axis"/>
+<line x1="106.0" y1="430.0" x2="536.0" y2="430.0" class="grid"/>
+<text x="98.0" y="434.0" class="tick" text-anchor="end">0.0</text>
+<line x1="106.0" y1="371.2" x2="536.0" y2="371.2" class="grid"/>
+<text x="98.0" y="375.2" class="tick" text-anchor="end">0.2</text>
+<line x1="106.0" y1="312.4" x2="536.0" y2="312.4" class="grid"/>
+<text x="98.0" y="316.4" class="tick" text-anchor="end">0.4</text>
+<line x1="106.0" y1="253.6" x2="536.0" y2="253.6" class="grid"/>
+<text x="98.0" y="257.6" class="tick" text-anchor="end">0.6</text>
+<line x1="106.0" y1="194.8" x2="536.0" y2="194.8" class="grid"/>
+<text x="98.0" y="198.8" class="tick" text-anchor="end">0.8</text>
+<line x1="106.0" y1="136.0" x2="536.0" y2="136.0" class="grid"/>
+<text x="98.0" y="140.0" class="tick" text-anchor="end">1.0</text>
+<line x1="106.0" y1="430.0" x2="106.0" y2="435.0" class="axis"/>
+<text x="106.0" y="452.0" class="tick" text-anchor="middle">0</text>
+<line x1="192.0" y1="430.0" x2="192.0" y2="435.0" class="axis"/>
+<text x="192.0" y="452.0" class="tick" text-anchor="middle">10</text>
+<line x1="278.0" y1="430.0" x2="278.0" y2="435.0" class="axis"/>
+<text x="278.0" y="452.0" class="tick" text-anchor="middle">20</text>
+<line x1="364.0" y1="430.0" x2="364.0" y2="435.0" class="axis"/>
+<text x="364.0" y="452.0" class="tick" text-anchor="middle">30</text>
+<line x1="450.0" y1="430.0" x2="450.0" y2="435.0" class="axis"/>
+<text x="450.0" y="452.0" class="tick" text-anchor="middle">40</text>
+<line x1="536.0" y1="430.0" x2="536.0" y2="435.0" class="axis"/>
+<text x="536.0" y="452.0" class="tick" text-anchor="middle">50</text>
+<line x1="106.0" y1="367.4" x2="536.0" y2="367.4" class="baseline"/>
+<text x="532.0" y="360.4" class="legend" text-anchor="end">baseline 21.3%</text>
+<polyline points="114.60,419.66 123.20,404.73 131.80,387.51 140.40,378.32 149.00,370.28 157.60,358.80 166.20,357.65 174.80,365.69 183.40,357.65 192.00,335.83 200.60,320.90 209.20,286.45 217.80,281.85 226.40,287.59 235.00,293.34 243.60,309.41 252.20,309.41 260.80,318.60 269.40,301.38 278.00,280.70 286.60,269.22 295.20,268.07 303.80,262.33 312.40,297.93 321.00,286.45 329.60,285.30 338.20,257.73 346.80,245.10 355.40,288.74 364.00,279.55 372.60,232.47 381.20,287.59 389.80,273.81 398.40,289.89 407.00,261.18 415.60,242.80 424.20,270.37 432.80,301.38 441.40,246.25 450.00,281.85 458.60,280.70 467.20,299.08 475.80,232.47 484.40,271.52 493.00,293.34 501.60,233.62 510.20,283.00 518.80,246.25 527.40,237.06 536.00,255.44" class="rollout" stroke="#a5d6a7"/>
+<polyline points="192.00,223.28 278.00,212.37 364.00,202.61 450.00,202.61 536.00,202.04" class="eval-line" stroke="#43a047"/>
+<circle cx="192.0" cy="223.3" r="5.2" fill="#43a047" stroke="white" stroke-width="1.5"/>
+<circle cx="278.0" cy="212.4" r="5.2" fill="#43a047" stroke="white" stroke-width="1.5"/>
+<circle cx="364.0" cy="202.6" r="5.2" fill="#43a047" stroke="white" stroke-width="1.5"/>
+<circle cx="450.0" cy="202.6" r="5.2" fill="#43a047" stroke="white" stroke-width="1.5"/>
+<circle cx="536.0" cy="202.0" r="5.2" fill="#43a047" stroke="white" stroke-width="1.5"/>
+<polygon points="536.00,242.01 538.94,248.97 546.46,249.61 540.76,254.56 542.47,261.91 536.00,258.01 529.53,261.91 531.24,254.56 525.54,249.61 533.06,248.97" fill="#e91e63" stroke="#8a0036" stroke-width="1.1"/>
+<line x1="116.0" y1="366.0" x2="142.0" y2="366.0" class="rollout" stroke="#a5d6a7"/>
+<text x="150.0" y="370.0" class="legend">rollout batch</text>
+<line x1="116.0" y1="388.0" x2="142.0" y2="388.0" class="eval-line" stroke="#43a047"/>
+<circle cx="129.0" cy="388.0" r="4.5" fill="#43a047" stroke="white" stroke-width="1.2"/>
+<text x="150.0" y="392.0" class="legend">eval on 512 subset</text>
+<line x1="116.0" y1="410.0" x2="142.0" y2="410.0" class="baseline"/>
+<text x="150.0" y="414.0" class="legend">local baseline on 1K</text>
+<polygon points="129.00,424.00 131.23,428.93 136.61,429.53 132.61,433.17 133.70,438.47 129.00,435.80 124.30,438.47 125.39,433.17 121.39,429.53 126.77,428.93" fill="#e91e63" stroke="#8a0036" stroke-width="1"/>
+<text x="150.0" y="436.0" class="legend">final full eval</text>
+  <text x="876.0" y="106.0" class="panel-title" text-anchor="middle">Format Accuracy</text>
+<text x="634.0" y="283.0" class="axis-label" text-anchor="middle" transform="rotate(-90 634.0 283.0)">Accuracy</text>
+<line x1="678.0" y1="430.0" x2="1108.0" y2="430.0" class="axis"/>
+<line x1="678.0" y1="136.0" x2="678.0" y2="430.0" class="axis"/>
+<line x1="678.0" y1="430.0" x2="1108.0" y2="430.0" class="grid"/>
+<text x="670.0" y="434.0" class="tick" text-anchor="end">0.0</text>
+<line x1="678.0" y1="371.2" x2="1108.0" y2="371.2" class="grid"/>
+<text x="670.0" y="375.2" class="tick" text-anchor="end">0.2</text>
+<line x1="678.0" y1="312.4" x2="1108.0" y2="312.4" class="grid"/>
+<text x="670.0" y="316.4" class="tick" text-anchor="end">0.4</text>
+<line x1="678.0" y1="253.6" x2="1108.0" y2="253.6" class="grid"/>
+<text x="670.0" y="257.6" class="tick" text-anchor="end">0.7</text>
+<line x1="678.0" y1="194.8" x2="1108.0" y2="194.8" class="grid"/>
+<text x="670.0" y="198.8" class="tick" text-anchor="end">0.9</text>
+<line x1="678.0" y1="136.0" x2="1108.0" y2="136.0" class="grid"/>
+<text x="670.0" y="140.0" class="tick" text-anchor="end">1.1</text>
+<line x1="678.0" y1="430.0" x2="678.0" y2="435.0" class="axis"/>
+<text x="678.0" y="452.0" class="tick" text-anchor="middle">0</text>
+<line x1="764.0" y1="430.0" x2="764.0" y2="435.0" class="axis"/>
+<text x="764.0" y="452.0" class="tick" text-anchor="middle">10</text>
+<line x1="850.0" y1="430.0" x2="850.0" y2="435.0" class="axis"/>
+<text x="850.0" y="452.0" class="tick" text-anchor="middle">20</text>
+<line x1="936.0" y1="430.0" x2="936.0" y2="435.0" class="axis"/>
+<text x="936.0" y="452.0" class="tick" text-anchor="middle">30</text>
+<line x1="1022.0" y1="430.0" x2="1022.0" y2="435.0" class="axis"/>
+<text x="1022.0" y="452.0" class="tick" text-anchor="middle">40</text>
+<line x1="1108.0" y1="430.0" x2="1108.0" y2="435.0" class="axis"/>
+<text x="1108.0" y="452.0" class="tick" text-anchor="middle">50</text>
+<line x1="678.0" y1="309.7" x2="1108.0" y2="309.7" class="baseline"/>
+<text x="1104.0" y="302.7" class="legend" text-anchor="end">baseline 45.0%</text>
+<polyline points="686.60,375.71 695.20,308.89 703.80,278.62 712.40,260.87 721.00,232.68 729.60,233.72 738.20,226.41 746.80,222.24 755.40,205.53 764.00,217.02 772.60,217.02 781.20,198.22 789.80,194.05 798.40,202.40 807.00,208.66 815.60,189.87 824.20,206.58 832.80,215.97 841.40,221.19 850.00,187.78 858.60,204.49 867.20,190.92 875.80,190.92 884.40,225.37 893.00,209.71 901.60,202.40 910.20,193.00 918.80,194.05 927.40,202.40 936.00,193.00 944.60,194.05 953.20,201.36 961.80,184.65 970.40,182.56 979.00,175.26 987.60,189.87 996.20,177.34 1004.80,180.48 1013.40,171.08 1022.00,178.39 1030.60,178.39 1039.20,184.65 1047.80,177.34 1056.40,177.34 1065.00,185.70 1073.60,171.08 1082.20,182.56 1090.80,170.04 1099.40,172.12 1108.00,176.30" class="rollout" stroke="#90caf9"/>
+<polyline points="764.00,167.95 850.00,167.95 936.00,165.34 1022.00,164.82 1108.00,164.82" class="eval-line" stroke="#1e88e5"/>
+<circle cx="764.0" cy="167.9" r="5.2" fill="#1e88e5" stroke="white" stroke-width="1.5"/>
+<circle cx="850.0" cy="167.9" r="5.2" fill="#1e88e5" stroke="white" stroke-width="1.5"/>
+<circle cx="936.0" cy="165.3" r="5.2" fill="#1e88e5" stroke="white" stroke-width="1.5"/>
+<circle cx="1022.0" cy="164.8" r="5.2" fill="#1e88e5" stroke="white" stroke-width="1.5"/>
+<circle cx="1108.0" cy="164.8" r="5.2" fill="#1e88e5" stroke="white" stroke-width="1.5"/>
+<polygon points="1108.00,168.99 1110.94,175.95 1118.46,176.59 1112.76,181.54 1114.47,188.89 1108.00,184.99 1101.53,188.89 1103.24,181.54 1097.54,176.59 1105.06,175.95" fill="#e91e63" stroke="#8a0036" stroke-width="1.1"/>
+<line x1="688.0" y1="366.0" x2="714.0" y2="366.0" class="rollout" stroke="#90caf9"/>
+<text x="722.0" y="370.0" class="legend">rollout batch</text>
+<line x1="688.0" y1="388.0" x2="714.0" y2="388.0" class="eval-line" stroke="#1e88e5"/>
+<circle cx="701.0" cy="388.0" r="4.5" fill="#1e88e5" stroke="white" stroke-width="1.2"/>
+<text x="722.0" y="392.0" class="legend">eval on 512 subset</text>
+<line x1="688.0" y1="410.0" x2="714.0" y2="410.0" class="baseline"/>
+<text x="722.0" y="414.0" class="legend">local baseline on 1K</text>
+<polygon points="701.00,424.00 703.23,428.93 708.61,429.53 704.61,433.17 705.70,438.47 701.00,435.80 696.30,438.47 697.39,433.17 693.39,429.53 698.77,428.93" fill="#e91e63" stroke="#8a0036" stroke-width="1"/>
+<text x="722.0" y="436.0" class="legend">final full eval</text>
+  <text x="590" y="526" class="axis-label" text-anchor="middle">GRPO Step</text>
+</svg>

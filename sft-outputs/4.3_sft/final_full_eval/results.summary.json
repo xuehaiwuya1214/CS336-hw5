@@ -1,0 +1,17 @@
+{
+  "num_examples": 5000,
+  "mean_reward": 0.5966,
+  "mean_format_reward": 0.8824,
+  "mean_answer_reward": 0.5966,
+  "format_1_answer_1": 2983,
+  "format_1_answer_0": 1429,
+  "format_0_answer_0": 588,
+  "input_path": "/data/math/val.jsonl",
+  "output_path": "/data/outputs/sft/filtered_full_fast_subset_eval/final_full_eval/results.jsonl",
+  "model_name_or_path": "/data/outputs/sft/filtered_full_fast_subset_eval/checkpoints/step_000437",
+  "generation_mode": "vllm",
+  "limit": null,
+  "max_tokens": 768,
+  "temperature": 0.0,
+  "top_p": 1.0
+}

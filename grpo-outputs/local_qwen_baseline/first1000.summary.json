@@ -1,0 +1,17 @@
+{
+  "num_examples": 1000,
+  "mean_reward": 0.213,
+  "mean_format_reward": 0.45,
+  "mean_answer_reward": 0.213,
+  "format_1_answer_1": 213,
+  "format_1_answer_0": 237,
+  "format_0_answer_0": 550,
+  "input_path": "data/math/val.jsonl",
+  "output_path": "output/local_qwen_baseline/first1000.jsonl",
+  "model_name_or_path": "/home/xuehaiwuya/models/Qwen2.5-Math-1.5B",
+  "generation_mode": "transformers",
+  "limit": 1000,
+  "max_tokens": 512,
+  "temperature": 0.0,
+  "top_p": 1.0
+}

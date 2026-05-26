@@ -1,0 +1,17 @@
+{
+  "num_examples": 1319,
+  "mean_reward": 0.17589082638362397,
+  "mean_format_reward": 0.513267626990144,
+  "mean_answer_reward": 0.17589082638362397,
+  "format_1_answer_1": 232,
+  "format_1_answer_0": 445,
+  "format_0_answer_0": 642,
+  "input_path": "data/gsm8k/test.jsonl",
+  "output_path": "outputs/gsm8k_qwen25_math_15b_vllm_full_512.jsonl",
+  "model_name_or_path": "/home/xuehaiwuya/models/Qwen2.5-Math-1.5B",
+  "generation_mode": "vllm",
+  "limit": null,
+  "max_tokens": 512,
+  "temperature": 0.0,
+  "top_p": 1.0
+}

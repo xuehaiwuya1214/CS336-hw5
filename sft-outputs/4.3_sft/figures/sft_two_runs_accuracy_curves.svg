@@ -1,0 +1,105 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1320" height="610" viewBox="0 0 1320 610">
+<rect width="100%" height="100%" fill="white" />
+<rect x="35" y="35" width="1250" height="540" rx="16" fill="white" stroke="#e5e5e5" />
+<text x="660" y="70" text-anchor="middle" font-size="24" font-weight="800">Reasoning SFT: Qwen2.5-Math-1.5B → Fine-tuned on Filtered Reasoning Traces</text>
+<text x="345.0" y="115" text-anchor="middle" font-size="22" font-weight="700">Reward Accuracy</text>
+<line x1="80" y1="150" x2="80" y2="510" stroke="#222" stroke-width="1.5" />
+<line x1="80" y1="510" x2="610" y2="510" stroke="#222" stroke-width="1.5" />
+<line x1="80" y1="510.0" x2="610" y2="510.0" stroke="#ddd" stroke-width="1" />
+<text x="66" y="515.0" text-anchor="end" font-size="15" fill="#222">0.0</text>
+<line x1="80" y1="438.0" x2="610" y2="438.0" stroke="#ddd" stroke-width="1" />
+<text x="66" y="443.0" text-anchor="end" font-size="15" fill="#222">0.2</text>
+<line x1="80" y1="366.0" x2="610" y2="366.0" stroke="#ddd" stroke-width="1" />
+<text x="66" y="371.0" text-anchor="end" font-size="15" fill="#222">0.3</text>
+<line x1="80" y1="294.0" x2="610" y2="294.0" stroke="#ddd" stroke-width="1" />
+<text x="66" y="299.0" text-anchor="end" font-size="15" fill="#222">0.5</text>
+<line x1="80" y1="222.0" x2="610" y2="222.0" stroke="#ddd" stroke-width="1" />
+<text x="66" y="227.0" text-anchor="end" font-size="15" fill="#222">0.6</text>
+<line x1="80" y1="150.0" x2="610" y2="150.0" stroke="#ddd" stroke-width="1" />
+<text x="66" y="155.0" text-anchor="end" font-size="15" fill="#222">0.8</text>
+<line x1="80.0" y1="150" x2="80.0" y2="510" stroke="#e5e5e5" stroke-width="1" />
+<text x="80.0" y="536" text-anchor="middle" font-size="15" fill="#222">0</text>
+<line x1="186.0" y1="150" x2="186.0" y2="510" stroke="#e5e5e5" stroke-width="1" />
+<text x="186.0" y="536" text-anchor="middle" font-size="15" fill="#222">150</text>
+<line x1="292.0" y1="150" x2="292.0" y2="510" stroke="#e5e5e5" stroke-width="1" />
+<text x="292.0" y="536" text-anchor="middle" font-size="15" fill="#222">300</text>
+<line x1="398.0" y1="150" x2="398.0" y2="510" stroke="#e5e5e5" stroke-width="1" />
+<text x="398.0" y="536" text-anchor="middle" font-size="15" fill="#222">450</text>
+<line x1="504.0" y1="150" x2="504.0" y2="510" stroke="#e5e5e5" stroke-width="1" />
+<text x="504.0" y="536" text-anchor="middle" font-size="15" fill="#222">600</text>
+<line x1="610.0" y1="150" x2="610.0" y2="510" stroke="#e5e5e5" stroke-width="1" />
+<text x="610.0" y="536" text-anchor="middle" font-size="15" fill="#222">750</text>
+<line x1="80" y1="496.9" x2="610" y2="496.9" stroke="#888" stroke-width="3" stroke-dasharray="10 7" opacity="0.85" />
+<text x="602" y="488.9" text-anchor="end" font-size="14" fill="#555">Baseline (2.9%)</text>
+<text x="345.0" y="570" text-anchor="middle" font-size="18">Training Step</text>
+<text x="22" y="330.0" text-anchor="middle" font-size="18" transform="rotate(-90 22 330.0)">Accuracy</text>
+<text x="985.0" y="115" text-anchor="middle" font-size="22" font-weight="700">Format Accuracy</text>
+<line x1="720" y1="150" x2="720" y2="510" stroke="#222" stroke-width="1.5" />
+<line x1="720" y1="510" x2="1250" y2="510" stroke="#222" stroke-width="1.5" />
+<line x1="720" y1="510.0" x2="1250" y2="510.0" stroke="#ddd" stroke-width="1" />
+<text x="706" y="515.0" text-anchor="end" font-size="15" fill="#222">0.0</text>
+<line x1="720" y1="450.0" x2="1250" y2="450.0" stroke="#ddd" stroke-width="1" />
+<text x="706" y="455.0" text-anchor="end" font-size="15" fill="#222">0.2</text>
+<line x1="720" y1="390.0" x2="1250" y2="390.0" stroke="#ddd" stroke-width="1" />
+<text x="706" y="395.0" text-anchor="end" font-size="15" fill="#222">0.4</text>
+<line x1="720" y1="330.0" x2="1250" y2="330.0" stroke="#ddd" stroke-width="1" />
+<text x="706" y="335.0" text-anchor="end" font-size="15" fill="#222">0.5</text>
+<line x1="720" y1="270.0" x2="1250" y2="270.0" stroke="#ddd" stroke-width="1" />
+<text x="706" y="275.0" text-anchor="end" font-size="15" fill="#222">0.7</text>
+<line x1="720" y1="210.0" x2="1250" y2="210.0" stroke="#ddd" stroke-width="1" />
+<text x="706" y="215.0" text-anchor="end" font-size="15" fill="#222">0.9</text>
+<line x1="720" y1="150.0" x2="1250" y2="150.0" stroke="#ddd" stroke-width="1" />
+<text x="706" y="155.0" text-anchor="end" font-size="15" fill="#222">1.1</text>
+<line x1="720.0" y1="150" x2="720.0" y2="510" stroke="#e5e5e5" stroke-width="1" />
+<text x="720.0" y="536" text-anchor="middle" font-size="15" fill="#222">0</text>
+<line x1="826.0" y1="150" x2="826.0" y2="510" stroke="#e5e5e5" stroke-width="1" />
+<text x="826.0" y="536" text-anchor="middle" font-size="15" fill="#222">150</text>
+<line x1="932.0" y1="150" x2="932.0" y2="510" stroke="#e5e5e5" stroke-width="1" />
+<text x="932.0" y="536" text-anchor="middle" font-size="15" fill="#222">300</text>
+<line x1="1038.0" y1="150" x2="1038.0" y2="510" stroke="#e5e5e5" stroke-width="1" />
+<text x="1038.0" y="536" text-anchor="middle" font-size="15" fill="#222">450</text>
+<line x1="1144.0" y1="150" x2="1144.0" y2="510" stroke="#e5e5e5" stroke-width="1" />
+<text x="1144.0" y="536" text-anchor="middle" font-size="15" fill="#222">600</text>
+<line x1="1250.0" y1="150" x2="1250.0" y2="510" stroke="#e5e5e5" stroke-width="1" />
+<text x="1250.0" y="536" text-anchor="middle" font-size="15" fill="#222">750</text>
+<line x1="720" y1="460.6" x2="1250" y2="460.6" stroke="#888" stroke-width="3" stroke-dasharray="10 7" opacity="0.85" />
+<text x="1242" y="452.6" text-anchor="end" font-size="14" fill="#555">Baseline (14.4%)</text>
+<text x="985.0" y="570" text-anchor="middle" font-size="18">Training Step</text>
+<text x="662" y="330.0" text-anchor="middle" font-size="18" transform="rotate(-90 662 330.0)">Accuracy</text>
+<polyline points="221.3,188.2 362.7,179.7 388.8,183.3" fill="none" stroke="#238be6" stroke-width="4" />
+<circle cx="221.3" cy="188.2" r="6" fill="#238be6" />
+<circle cx="362.7" cy="179.7" r="6" fill="#238be6" />
+<circle cx="388.8" cy="183.3" r="6" fill="#238be6" />
+
+<polyline points="861.3,186.7 1002.7,186.0 1028.8,185.0" fill="none" stroke="#238be6" stroke-width="4" />
+<circle cx="861.3" cy="186.7" r="6" fill="#238be6" />
+<circle cx="1002.7" cy="186.0" r="6" fill="#238be6" />
+<circle cx="1028.8" cy="185.0" r="6" fill="#238be6" />
+
+<polyline points="186.0,198.6 292.0,182.4 398.0,179.7 504.0,186.5 610.0,184.2" fill="none" stroke="#43ad4d" stroke-width="4" />
+<circle cx="186.0" cy="198.6" r="6" fill="#43ad4d" />
+<circle cx="292.0" cy="182.4" r="6" fill="#43ad4d" />
+<circle cx="398.0" cy="179.7" r="6" fill="#43ad4d" />
+<circle cx="504.0" cy="186.5" r="6" fill="#43ad4d" />
+<circle cx="610.0" cy="184.2" r="6" fill="#43ad4d" />
+
+<polyline points="826.0,186.3 932.0,187.7 1038.0,180.9 1144.0,181.5 1250.0,180.9" fill="none" stroke="#43ad4d" stroke-width="4" />
+<circle cx="826.0" cy="186.3" r="6" fill="#43ad4d" />
+<circle cx="932.0" cy="187.7" r="6" fill="#43ad4d" />
+<circle cx="1038.0" cy="180.9" r="6" fill="#43ad4d" />
+<circle cx="1144.0" cy="181.5" r="6" fill="#43ad4d" />
+<circle cx="1250.0" cy="180.9" r="6" fill="#43ad4d" />
+
+<polygon points="388.8,223.5 393.4,235.3 405.9,236.0 396.2,243.9 399.4,256.1 388.8,249.3 378.2,256.1 381.5,243.9 371.7,236.0 384.3,235.3" fill="#e91e63" stroke="#111" stroke-width="1" />
+<polygon points="1028.8,189.5 1033.4,201.2 1045.9,201.9 1036.2,209.9 1039.4,222.0 1028.8,215.2 1018.2,222.0 1021.5,209.9 1011.7,201.9 1024.3,201.2" fill="#e91e63" stroke="#111" stroke-width="1" />
+<rect x="270" y="392" width="330" height="100" fill="white" opacity="0.9" stroke="#ccc" />
+<line x1="288" y1="416" x2="328" y2="416" stroke="#888" stroke-width="3" stroke-dasharray="9 6" /><text x="340" y="421" font-size="14">Baseline</text>
+<line x1="288" y1="444" x2="328" y2="444" stroke="#238be6" stroke-width="4" /><circle cx="308" cy="444" r="5" fill="#238be6" /><text x="340" y="449" font-size="14">1 epoch eval on 1K subset</text>
+<line x1="288" y1="472" x2="328" y2="472" stroke="#43ad4d" stroke-width="4" /><circle cx="308" cy="472" r="5" fill="#43ad4d" /><text x="340" y="477" font-size="14">2 epoch eval on 1K subset</text>
+<polygon points="308.0,486.0 310.5,492.5 317.5,492.9 312.1,497.3 313.9,504.1 308.0,500.3 302.1,504.1 303.9,497.3 298.5,492.9 305.5,492.5" fill="#e91e63" stroke="#111" stroke-width="1" /><text x="340" y="501" font-size="14">1 epoch full val. (59.7%)</text>
+<rect x="910" y="392" width="330" height="100" fill="white" opacity="0.9" stroke="#ccc" />
+<line x1="928" y1="416" x2="968" y2="416" stroke="#888" stroke-width="3" stroke-dasharray="9 6" /><text x="980" y="421" font-size="14">Baseline</text>
+<line x1="928" y1="444" x2="968" y2="444" stroke="#238be6" stroke-width="4" /><circle cx="948" cy="444" r="5" fill="#238be6" /><text x="980" y="449" font-size="14">1 epoch eval on 1K subset</text>
+<line x1="928" y1="472" x2="968" y2="472" stroke="#43ad4d" stroke-width="4" /><circle cx="948" cy="472" r="5" fill="#43ad4d" /><text x="980" y="477" font-size="14">2 epoch eval on 1K subset</text>
+<polygon points="948.0,486.0 950.5,492.5 957.5,492.9 952.1,497.3 953.9,504.1 948.0,500.3 942.1,504.1 943.9,497.3 938.5,492.9 945.5,492.5" fill="#e91e63" stroke="#111" stroke-width="1" /><text x="980" y="501" font-size="14">1 epoch full val. (88.2%)</text>
+</svg>

@@ -1,0 +1,4 @@
+experiment,step,num_examples,answer_accuracy,format_accuracy,reward,summary_path
+filtered_full_fast_subset_eval,200,1000,0.715,0.943,0.715,/data/outputs/sft/filtered_full_fast_subset_eval/eval/step_000200.summary.json
+filtered_full_fast_subset_eval,400,1000,0.734,0.945,0.734,/data/outputs/sft/filtered_full_fast_subset_eval/eval/step_000400.summary.json
+filtered_full_fast_subset_eval,437,1000,0.726,0.948,0.726,/data/outputs/sft/filtered_full_fast_subset_eval/eval/step_000437.summary.json

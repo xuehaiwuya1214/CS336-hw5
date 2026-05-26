@@ -1,0 +1,7 @@
+{
+  "eval_step": 300,
+  "num_examples": 1000,
+  "eval/format_accuracy": 0.94,
+  "eval/answer_accuracy": 0.728,
+  "eval/reward": 0.728
+}

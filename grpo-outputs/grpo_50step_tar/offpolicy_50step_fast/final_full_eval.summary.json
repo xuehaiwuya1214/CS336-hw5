@@ -1,0 +1,7 @@
+{
+  "num_examples": 5000,
+  "eval/reward": 0.602,
+  "eval/format_reward": 0.9354,
+  "eval/answer_reward": 0.602,
+  "eval_max_new_tokens": 512
+}
