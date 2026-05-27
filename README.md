@@ -147,7 +147,6 @@ SFT 实验结果归档目录，后来从服务器拉回并整理。
 sft-outputs/4.3_sft/analysis/sft_report.md
 sft-outputs/4.3_sft/analysis/sft_validation_curves.png
 sft-outputs/4.3_sft/figures/sft_two_runs_accuracy_curves.svg
-sft-outputs/4.3_sft/final_full_eval/results.summary.json
 ```
 
 ### `grpo-outputs/`
@@ -178,21 +177,21 @@ grpo-outputs/grpo_50step_tar/offpolicy_50step_fast/final_full_eval.summary.json
 | --- | --- | ---: | ---: |
 | Qwen baseline | `data/math/val.jsonl` 前 1000 条，本地 Transformers | 0.2130 | 0.4500 |
 | SFT | validation subset 1000 条，step 437 | 0.7260 | 0.9480 |
-| SFT | full validation 5000 条，step 437 | 0.5966 | 0.8824 |
 | GRPO | validation subset 512 条，step 50 | 0.7754 | 0.9922 |
 | GRPO | full validation 5000 条，最终评估 | 0.6020 | 0.9354 |
 
-![alt text](task-explaination/image-1.png)
-![alt text](task-explaination/image.png)
+
 一个比较直观的理解：
 
 - baseline 的格式正确率和答案正确率都比较低，说明 zero-shot 下模型经常不能稳定遵守作业需要的 `<think>` / `<answer>` 格式。
-- SFT 显著提高了格式正确率和答案正确率，说明 reasoning traces 对模型输出格式和解题能力都有帮助；但 subset eval 高于 full validation，说明小验证子集可能偏乐观。
-- GRPO 的 subset eval 曲线提升很快，但 full validation 结果低于 subset，说明短跑 GRPO 确实学到了 reward 偏好的输出方式，但泛化评估仍需要谨慎。
-- GRPO 图里的 `rollout batch` 曲线不是 validation accuracy，而是训练时当前模型在采样 batch 上的即时 reward。SFT 没有这条线，因为 SFT 不需要先生成回答再打 reward。
+- SFT 显著提高了格式正确率和答案正确率，说明 reasoning traces 对模型输出格式和解题能力都有帮助。
+- GRPO 的 subset eval 曲线提升很快，50个step效果就已经不错。
+- 二者的 full validation 结果低于 subset，说明泛化评估仍需要谨慎。
+- GRPO 图里的 `rollout batch` 曲线不是 validation accuracy，而是训练时当前模型在采样 batch 上的即时 reward，也能很好地反应处训练收敛的过程。
 
 相关图表：
-
+![alt text](task-explaination/image-1.png)
+![alt text](task-explaination/image.png)
 ```text
 sft-outputs/4.3_sft/analysis/sft_validation_curves.png
 grpo-outputs/grpo_50step/analysis/grpo_baseline_curves.svg
@@ -217,3 +216,8 @@ grpo-outputs/grpo_50step/analysis/grpo_baseline_curves.svg
 
 这是一项很不错的工程作业，从里面能学到很多——数据格式、路径、依赖、显存、磁盘、vLLM、服务器连接、日志和结果管理等等，以及最重要的gpt老师沟通的能力。当然，后面正式做强化学习或者微调还有llama-factory,verl等可以直接调用，但这里手搓的感觉也很不错。
 Have fun!
+
+
+### 更新：In-Context Reinforcement Learning for Tool Use in Large Language Models 简单复现
+论文链接：https://arxiv.org/pdf/2603.08068，详细内容见/task-explaination/QA_in_grpo.md
+gpt搜索发现已经有工作在复杂的推理，难以冷启动的场景下做了，这么看也还是有点意义的。（Context Bootstrapped Reinforcement Learning，https://arxiv.org/pdf/2603.18953）
