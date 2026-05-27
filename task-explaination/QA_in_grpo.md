@@ -95,3 +95,115 @@ watch -n 5 nvidia-smi 可查看显卡运行情况
 笔者实际用的是1张A40用于训练，1张用于评估，算例大约$1.5 \times 10^{14}$FLOPS，实际MFU折损综合几个前向、反向等几个过程能到30%就不错了，大约$$150 \text{ TFLOPs} \times 30\% \approx 45 \text{ TFLOPs/sec}$$，估算出$$\frac{6.07 \times 10^{15}}{4.5 \times 10^{13}} \approx 135 \text{ 秒} \text{（2 分 15 秒）}$$。如此来看，如果估计没有错的话，大约实际训练时间与理论时间要多了1分半左右（1/3）。最终大约跑了3个小时。
 结果如下图，其余结果见/grpo-outputs
 ![alt text](image-1.png)
+
+
+### 更新：In-Context Reinforcement Learning for Tool Use in Large Language Models 简单复现
+基于这个作业，正好可以用来简单在non-tooluse的场景下简单复现一下icrl的结果（论文链接；https://arxiv.org/pdf/2603.08068）。
+- 原理：
+
+这里做的是一个 no-tool ICRL-lite 对比实验，不使用工具、不做 SFT、不改 reward function，也不改 GRPO 的 loss / advantage / logprob / mask / optimizer 等核心实现。  
+唯一变化是 rollout 阶段的 prompt：在原始 `r1_zero` prompt 前拼接少量 few-shot demonstrations；而 validation/eval 仍然使用原始 zero-shot `r1_zero` prompt。
+
+固定 schedule：
+
+```text
+step 1-10: 3-shot
+step 11-20: 2-shot，使用后 2 个 demo
+step 21-30: 1-shot，使用最后 1 个 demo
+step 31-50: 0-shot
+```
+
+demo bank 放在：
+
+```text
+data/icrl/fewshot_r1_zero.jsonl
+```
+
+实现文件：
+
+```text
+cs336_alignment/icrl.py
+scripts/train_grpo_icrl_lite.py
+```
+
+参数检查：`train_grpo_icrl_lite.py` 复用 `train_grpo.py` 的 `parse_args()` 和 `build_config()`，因此除 `--icrl-demo-path` 与 rollout prompt 构造外，其余训练参数与 50-step GRPO baseline 保持一致。也就是说，`n_grpo_steps`、`learning_rate`、`rollout_batch_size`、`group_size`、`epochs_per_rollout_batch`、`train_batch_size`、`gradient_accumulation_steps`、`loss_type`、`cliprange`、eval 设置等都沿用同一套参数。
+
+- 训练命令：
+
+先从本地同步新增文件：
+
+```bash
+cd ~/All-code/AI-lessons/CS336/assignment5-alignment-main/assignment5-alignment-main
+
+rsync -av -e "ssh -p 34191" \
+  cs336_alignment/icrl.py \
+  root@ssh-cn-huabei1.ebcloud.com:/root/workspace/assignment5-alignment-main/cs336_alignment/
+
+rsync -av -e "ssh -p 34191" \
+  scripts/train_grpo_icrl_lite.py \
+  root@ssh-cn-huabei1.ebcloud.com:/root/workspace/assignment5-alignment-main/scripts/
+
+ssh -p 34191 root@ssh-cn-huabei1.ebcloud.com "mkdir -p /root/workspace/assignment5-alignment-main/data/icrl"
+
+rsync -av -e "ssh -p 34191" \
+  data/icrl/fewshot_r1_zero.jsonl \
+  root@ssh-cn-huabei1.ebcloud.com:/root/workspace/assignment5-alignment-main/data/icrl/
+```
+
+服务器中运行：
+
+```bash
+cd /root/workspace/assignment5-alignment-main
+mkdir -p /data/outputs/grpo/icrl_lite_50step /data/cache /data/tmp
+tmux new -s grpo_icrl
+
+CUDA_VISIBLE_DEVICES=0,1 \
+HF_HOME=/data/cache/huggingface \
+TRANSFORMERS_CACHE=/data/cache/huggingface \
+XDG_CACHE_HOME=/data/cache \
+TMPDIR=/data/tmp \
+PYTHONPATH=. python scripts/train_grpo_icrl_lite.py \
+  --model-path /data/a5-alignment/models/Qwen2.5-Math-1.5B \
+  --train-path /data/math/train.jsonl \
+  --val-path /data/math/val.jsonl \
+  --output-dir /data/outputs/grpo/icrl_lite_50step \
+  --run-name icrl_lite_50step \
+  --experiment grpo_off_policy \
+  --n-grpo-steps 50 \
+  --learning-rate 2e-5 \
+  --rollout-batch-size 256 \
+  --group-size 8 \
+  --epochs-per-rollout-batch 2 \
+  --train-batch-size 256 \
+  --gradient-accumulation-steps 128 \
+  --loss-type grpo_clip \
+  --cliprange 0.2 \
+  --use-std-normalization \
+  --sampling-temperature 1.0 \
+  --sampling-min-tokens 4 \
+  --sampling-max-tokens 512 \
+  --eval-every 10 \
+  --eval-limit 512 \
+  --eval-max-new-tokens 512 \
+  --max-seq-len 2048 \
+  --max-grad-norm 1.0 \
+  --train-device cuda:0 \
+  --rollout-device cuda:1 \
+  --rollout-backend vllm \
+  --eval-backend vllm \
+  --cache-dir /data/cache \
+  --tmp-dir /data/tmp \
+  --tmp-model-dir /data/tmp/grpo_vllm_policy \
+  --icrl-demo-path data/icrl/fewshot_r1_zero.jsonl \
+  --final-full-eval \
+  --gradient-checkpointing \
+  2>&1 | tee /data/outputs/grpo/icrl_lite_50step/train.log
+```
+
+查看结果：
+
+```bash
+cat /data/outputs/grpo/icrl_lite_50step/summary.json
+cat /data/outputs/grpo/icrl_lite_50step/final_full_eval.summary.json
+tail -20 /data/outputs/grpo/icrl_lite_50step/metrics.jsonl
+```

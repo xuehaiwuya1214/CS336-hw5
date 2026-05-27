@@ -1,0 +1,3 @@
+{"id":"demo_001","question":"If x + 7 = 19, what is x?","reasoning":"Subtract 7 from both sides. Then x = 19 - 7 = 12.","answer":"12","category":"algebra"}
+{"id":"demo_002","question":"A rectangle has length 8 and width 5. What is its area?","reasoning":"The area of a rectangle is length times width. Thus the area is 8 \\times 5 = 40.","answer":"40","category":"geometry"}
+{"id":"demo_003","question":"How many integers from 1 to 20 are divisible by 5?","reasoning":"The multiples are 5, 10, 15, and 20. Therefore there are 4 such integers.","answer":"4","category":"number_theory"}

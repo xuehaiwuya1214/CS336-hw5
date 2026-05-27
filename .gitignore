@@ -1,6 +1,9 @@
 *.bin
 models/
-data/
+data/*
+!data/icrl/
+data/icrl/*
+!data/icrl/fewshot_r1_zero.jsonl
 wandb/
 outputs/
 checkpoints/
